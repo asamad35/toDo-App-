@@ -1,0 +1,217 @@
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: linear-gradient(120deg, #f6d365, #d17d65);
+  min-height: 100vh;
+  color: white;
+}
+header {
+  text-align: center;
+  margin: 40px;
+  font-size: 2rem;
+  padding-top: 40px;
+}
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* TASK  INPUT TEXT FIELD AND BUTTON STYLING */
+form input,
+form button {
+  height: 45px;
+  width: 25%;
+  padding-left: 10px;
+  border: none;
+  outline: none;
+  align-self: center;
+  font-size: 1.5rem;
+  background: white;
+}
+form button {
+  text-align: inherit;
+  width: 45px;
+  color: #ff6f47;
+}
+form button:hover {
+  background: #ff6f47;
+  color: white;
+  transition: ease 0.3s;
+}
+.todo-search {
+  width: 14%;
+  margin-left: -30px;
+}
+/* CONTAINER STYLING */
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 6%;
+}
+/* UL LIST STYLING */
+.todo-list {
+  min-width: 35%;
+  list-style: none;
+}
+/* TODO DIV STYLING */
+.todo {
+  margin: 0.5rem;
+  color: black;
+  background: white;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  min-height: 2.3rem;
+}
+/* TODO DIV ANIMATION */
+.todo-fade {
+  animation: fadeIn ease-in 0.4s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+/* TODO DIV ITEMS  */
+/* IT WILL MAXIMIMUM SPACE TO FIRSSE ELEMENT HENCE PUSHING ALL OTHER ELEMENTS TO RIGHT*/
+.todo-item {
+  flex: 1;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding-right: 2%;
+}
+
+/* BUTTONS ANIMATION AND STYLING */
+.complete-button,
+.trash-button,
+.edit-button {
+  color: white;
+  background: #ff6f47;
+  padding: 1rem 1.2rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.trash-button:hover {
+  transform: scale(1.1);
+}
+.complete-button {
+  background: green;
+}
+.complete-button:hover {
+  transform: scale(1.05);
+}
+.edit-button {
+  background: #cc674b;
+}
+.edit-button:hover {
+  transform: scale(1.05);
+}
+/* REMOVING CURSOR */
+.fa-check,
+.fa-trash,
+.fa-edit {
+  pointer-events: none;
+}
+/* COMPLETED TASK FADE ANIMATION */
+.completed {
+  opacity: 0.5;
+  transition: ease 0.4s;
+}
+/*TEXT DECORATION REMOVING ANIMATION*/
+
+/* .reverse-strike-animation {
+  position: relative;
+}
+.reverse-strike-animation::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: black;
+  animation: reverse-strike 0.5s ease-in-out forwards;
+}
+@keyframes reverse-strike {
+  0% {
+    width: 100;
+  }
+  100% {
+    width: 0%;
+  }
+} */
+
+/* TEXT DECORATION ANIMATION */
+.strike-animation {
+  position: relative;
+}
+
+.strike-animation::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: black;
+  animation: strike 0.5s ease-in-out forwards;
+}
+@keyframes strike {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+/* DELETE TASK ANIMATION */
+.fall {
+  transform: translateY(10rem) rotate(20deg);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+/* EDIT INPUT FIELD */
+.item-li-input {
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 96%;
+}
+/* SELECT FROM ALL  COMPLETED UNCOMPLETED */
+select {
+  appearance: none;
+  width: 14rem;
+  margin: 1rem;
+  margin-left: 30px;
+  border: none;
+  color: #d17d65;
+  cursor: pointer;
+  outline: none;
+  height: 45px;
+  padding-left: 10px;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.select::after {
+  content: "\25BC";
+  background-color: #ff6f47;
+  position: relative;
+  padding: 11px;
+  right: 58px;
+  bottom: 3px;
+  pointer-events: none;
+}
+.select:hover::after {
+  transition: 0.3s ease;
+  background-color: #d66a4c;
+  color: white;
+}
